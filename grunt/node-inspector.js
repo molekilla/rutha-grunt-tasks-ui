@@ -1,0 +1,9 @@
+
+module.exports = {
+  dev: {
+    options: {
+      'web-port': '<%= nodeInspector.webPort %>',
+      'debug-port': '<%= nodeInspector.debugPort %>'
+    }
+  }
+};
