@@ -8,6 +8,6 @@ module.exports = {
     },
     build: {
       src: ['<%= cwd %>/src/app/**/*.js'],
-      dest: '<%= cwd %>/dist/app.js'
+      dest: '<%= cwd %>/releases/v<%= pkg.version %>/app.js'
     }
   };

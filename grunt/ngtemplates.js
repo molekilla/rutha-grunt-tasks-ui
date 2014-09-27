@@ -7,10 +7,18 @@ module.exports = {
       module: '<%= ngTemplates.moduleNamespace %>'
     }
   },
+  specs: {
+    cwd: '<%= cwd %>/src',
+    src: 'app/**/**.html',
+    dest: '<%= cwd %>/src/test/templates.js',
+    options: {
+      module: '<%= ngTemplates.moduleNamespace %>'
+    }
+  },
   build: {
     cwd: '<%= cwd %>/src',
     src: 'app/**/**.html',
-    dest: '<%= cwd %>/dist/templates.js',
+    dest: '<%= cwd %>/releases/v<%= pkg.version %>/templates.js',
     options: {
       module: '<%= ngTemplates.moduleNamespace %>',
       collapseBooleanAttributes: true,

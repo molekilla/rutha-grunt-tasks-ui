@@ -1,13 +1,16 @@
 module.exports = {
-	options: {
-		add: true,
-		remove: true,
-		singleQuotes: true,
-		ngAnnotateOptions: {}
-	},
-	'all': {
-		files: {
-			'<%= cwd %>/dist/app.js': ['<%= cwd %>/dist/app.js']
-		}
-	}
+  options: {
+    singleQuotes: true,
+    ngAnnotateOptions: {}
+  },
+  dev: {
+    files: {
+      '<%= cwd %>/dist/app.js': ['<%= cwd %>/dist/app.js']
+    }
+  },
+  build: {
+    files: {
+      '<%= cwd %>/releases/v<%= pkg.version %>/app.js': ['<%= cwd %>/releases/v<%= pkg.version %>/app.js']
+    }
+  }
 };

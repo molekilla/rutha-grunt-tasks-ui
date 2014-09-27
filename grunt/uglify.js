@@ -12,12 +12,10 @@ module.exports = {
   },
   build: {
     options: {
-      sourceMap: true,
-      sourceMapIncludeSources: true,
-      sourceMapName: '<%= cwd %>/dist/sourcemap.map'
+      mangle: false
     },
     files: {
-      '<%= cwd %>/dist/app.js': ['<%= cwd %>/src/app/**/*.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/app.min.js': ['<%= cwd %>/src/app/**/*.js']
     }
   }
 };

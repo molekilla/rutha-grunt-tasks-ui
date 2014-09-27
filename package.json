@@ -1,12 +1,13 @@
 {
   "name": "rutha-grunt-tasks-ui",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Rutha Grunt Tasks UI",
   "author": "Rogelio Morrell",
   "repository": {
     "type": "git",
     "url": "git://github.com/molekilla/rutha-grunt-tasks-ui.git"
   },
+  "main": "Gruntfile.js",
   "license": "MIT",
   "devDependencies": {
     "grunt": "~0.4.5",
