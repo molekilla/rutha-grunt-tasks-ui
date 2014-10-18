@@ -15,7 +15,7 @@ module.exports = {
       mangle: false
     },
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/app.min.js': ['<%= cwd %>/dist/app.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/app.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/app.js']
     }
   }
 };
