@@ -7,7 +7,7 @@ module.exports = {
       mangle: false
     },
     files: {
-      '<%= cwd %>/dist/app.js': ['<%= cwd %>/src/app/**/*.js']
+      '<%= cwd %>/dist/app.js': ['<%= cwd %>/dist/app.js']
     }
   },
   build: {
@@ -15,7 +15,7 @@ module.exports = {
       mangle: false
     },
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/app.min.js': ['<%= cwd %>/src/app/**/*.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/app.min.js': ['<%= cwd %>/dist/app.js']
     }
   }
 };
