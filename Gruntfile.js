@@ -11,11 +11,11 @@ var Help =  {
 var tasks = function(grunt) {
   // server dev environment with browsersync
   grunt.registerTask('autosync', Help.autosync,
-    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 'wiredep:dev', 'concurrent:auto']);
+    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 'wiredep:dev', 'copy:devImages', 'concurrent:auto']);
   
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
-    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 'wiredep:dev', 'concurrent:dev']);
+    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 'wiredep:dev', 'copy:devImages', 'concurrent:dev']);
     
   // runs server side specs and UI specs
   grunt.registerTask('spec', Help.spec,
@@ -23,7 +23,7 @@ var tasks = function(grunt) {
 
   // builds deployment assets
   grunt.registerTask('build', Help.build,
-    ['ngtemplates:build', 'concat:build', 'ngAnnotate:build', 'uglify:build', 'cssmin:build']);
+    ['ngtemplates:build', 'copy:buildImages', 'concat:build', 'ngAnnotate:build', 'uglify:build', 'cssmin:build']);
 
   // runs functional tests
   grunt.registerTask('test', Help.test,
