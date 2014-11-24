@@ -1,10 +1,18 @@
 module.exports = {
     devImages: {
-      src: '<%= cwd %>/src/app/img/*',
-      dest: '<%= cwd %>/dist/img'
+        expand: true,
+        cwd: '<%= cwd %>',
+        src: 'src/app/img/**',
+        dest: 'dist/img/',
+        flatten: true,
+        filter: 'isFile'
     },
     buildImages: {
-      src: '<%= cwd %>/src/app/img/*',
-      dest: '<%= cwd %>/releases/v<%= pkg.version %>/img'
+        expand: true,
+        cwd: '<%= cwd %>',
+        src: 'src/app/img/**',
+        dest: 'releases/v<%= pkg.version %>/img/',
+        flatten: true,
+        filter: 'isFile'
     }
 };
