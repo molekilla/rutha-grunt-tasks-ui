@@ -5,7 +5,8 @@ var Help =  {
   test: 'Runs E2E/Functional tests (Angular)',
   build: 'Prepares UI assets for release',
   jshinting: 'Verifies javascript using jshint',
-  auditpkg: 'Verifies modules for any security issues'
+  auditpkg: 'Verifies modules for any security issues',
+  docs: 'Generates documentation'
 };
 
 var tasks = function(grunt) {
@@ -36,6 +37,10 @@ var tasks = function(grunt) {
   // verifies security
   grunt.registerTask('auditpkg', Help.auditpkg,
     ['validate-package']);
+  
+  // generates jsdoc3
+  grunt.registerTask('docs', Help.docs,
+    ['jsdoc']);
 };
 
 function Loader(grunt) {
