@@ -22,8 +22,15 @@ var tasks = function(grunt) {
     ['jshint', 'jasmine_node', 'ngtemplates:specs', 'wiredep:test', 'karma:unit']);
 
   // builds deployment assets
+  // 1) Build Angular templates
+  // 2) Copy images
+  // 3) Concat App
+  // 4) Concat Bower
+  // 5) Annotate app.js
+  // 6) Uglify app.js to app.min.js
+  // 7) Minifies CSS
   grunt.registerTask('build', Help.build,
-    ['ngtemplates:build', 'copy:buildImages', 'concat:build', 'ngAnnotate:build', 'uglify:build', 'cssmin:build']);
+    ['ngtemplates:build', 'copy:buildImages', 'bower_concat:build', 'concat:build', 'ngAnnotate:build', 'uglify:build', 'cssmin:build']);
 
   // runs functional tests
   grunt.registerTask('test', Help.test,
