@@ -11,7 +11,9 @@ var Help =  {
 var tasks = function(grunt) {
   // server dev environment with browsersync
   grunt.registerTask('autosync', Help.autosync,
-    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 'wiredep:dev', 'copy:devImages', 'cssmin:dev', 'concurrent:auto']);
+    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
+     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 
+     'copy:devImages', 'cssmin:dev', 'concurrent:auto']);
   
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
