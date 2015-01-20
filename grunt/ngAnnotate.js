@@ -5,12 +5,12 @@ module.exports = {
   },
   dev: {
     files: {
-      '<%= cwd %>/dist/app.js': ['<%= cwd %>/dist/app.js']
+      '<%= cwd %>/dist/js/app.js': ['<%= cwd %>/dist/js/app.js']
     }
   },
   build: {
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/app.js': ['<%= cwd %>/releases/v<%= pkg.version %>/app.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/app.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/app.js']
     }
   }
 };

@@ -3,11 +3,11 @@ module.exports = {
     options: {
       sourceMap: true,
       sourceMapIncludeSources: true,
-      sourceMapName: '<%= cwd %>/dist/sourcemap.map',
+      sourceMapName: '<%= cwd %>/dist/js/sourcemap.map',
       mangle: false
     },
     files: {
-      '<%= cwd %>/dist/app.js': ['<%= cwd %>/dist/app.js']
+      '<%= cwd %>/dist/js/app.js': ['<%= cwd %>/dist/js/app.js']
     }
   },
   build: {
@@ -15,7 +15,7 @@ module.exports = {
       mangle: false
     },
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/app.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/app.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/app.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/app.js']
     }
   }
 };

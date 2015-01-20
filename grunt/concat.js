@@ -3,25 +3,27 @@ module.exports = {
       separator: ';',
     },
     dev: {
-      src: ['<%= cwd %>/src/app/app.js',
-      '<%= cwd %>/src/app/common/global/*.js',
-      '<%= cwd %>/src/app/common/models/*.js',
-      '<%= cwd %>/src/app/common/services/*.js',
-      '<%= cwd %>/src/app/common/controllers/*.js',
-      '<%= cwd %>/src/app/common/directives/*.js',
-      '<%= cwd %>/src/app/common/**/*.js',
-      '<%= cwd %>/src/app/**/*.js'],
-      dest: '<%= cwd %>/dist/app.js'
+      cwd: '<%= cwd %>',
+      src: ['<%= releaseInclude.js || "" %>', 'src/app/app.js',
+      'src/app/common/global/*.js',
+      'src/app/common/models/*.js',
+      'src/app/common/services/*.js',
+      'src/app/common/controllers/*.js',
+      'src/app/common/directives/*.js',
+      'src/app/common/**/*.js',
+      'src/app/**/*.js'],
+      dest: 'dist/js/app.js'
     }, 
     build: {
-      src: ['<%= cwd %>/src/app/app.js',
-      '<%= cwd %>/src/app/common/global/*.js',
-      '<%= cwd %>/src/app/common/models/*.js',
-      '<%= cwd %>/src/app/common/services/*.js',
-      '<%= cwd %>/src/app/common/controllers/*.js',
-      '<%= cwd %>/src/app/common/directives/*.js',
-      '<%= cwd %>/src/app/common/**/*.js',
-      '<%= cwd %>/src/app/**/*.js'],
-      dest: '<%= cwd %>/releases/v<%= pkg.version %>/app.js'
+      cwd: '<%= cwd %>',
+      src: ['<%= releaseInclude.js || "" %>', 'src/app/app.js',
+      'src/app/common/global/*.js',
+      'src/app/common/models/*.js',
+      'src/app/common/services/*.js',
+      'src/app/common/controllers/*.js',
+      'src/app/common/directives/*.js',
+      'src/app/common/**/*.js',
+      'src/app/**/*.js'],
+      dest: 'releases/v<%= pkg.version %>/ui/public/js/app.js'
     }
   };
