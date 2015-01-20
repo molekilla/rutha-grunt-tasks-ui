@@ -23,6 +23,14 @@ module.exports = {
     flatten: true,
     filter: 'isFile'
   },
+  buildCssImages: {
+    cwd: '<%= cwd %>/src/app/css',
+    expand: true,
+    src: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif'],
+    dest: 'releases/v<%= pkg.version %>/ui/public/css/',
+    flatten: false,
+    filter: 'isFile'    
+  },  
   copyViews: {
     expand: true,
     cwd: '<%= cwd %>/views',

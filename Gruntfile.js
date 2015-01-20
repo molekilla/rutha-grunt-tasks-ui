@@ -35,7 +35,7 @@ var tasks = function(grunt) {
   // 8) Minifies CSS
   // 9) Zip
   grunt.registerTask('build', Help.build,
-    ['ngtemplates:build', 'copy:buildImages', 'bower_concat:build', 
+    ['ngtemplates:build', 'copy:buildImages', 'copy:buildCssImages', 'bower_concat:build', 
      'copy:copyViews', 'copy:buildFrontEnd',
      'concat:build', 'ngAnnotate:build', 'uglify:build', 
      'cssmin:build', 'compress:build']);
