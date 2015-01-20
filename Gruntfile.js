@@ -15,7 +15,9 @@ var tasks = function(grunt) {
   
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
-    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 'wiredep:dev', 'copy:devImages', 'cssmin:dev', 'concurrent:dev']);
+    ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
+     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages',
+     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:dev']);
     
   // runs server side specs and UI specs
   grunt.registerTask('spec', Help.spec,
@@ -26,11 +28,17 @@ var tasks = function(grunt) {
   // 2) Copy images
   // 3) Concat App
   // 4) Concat Bower
-  // 5) Annotate app.js
-  // 6) Uglify app.js to app.min.js
-  // 7) Minifies CSS
+  // 5) Copy Views
+  // 6) Copy UI App
+  // 6) Annotate app.js
+  // 7) Uglify app.js to app.min.js
+  // 8) Minifies CSS
+  // 9) Zip
   grunt.registerTask('build', Help.build,
-    ['ngtemplates:build', 'copy:buildImages', 'bower_concat:build', 'concat:build', 'ngAnnotate:build', 'uglify:build', 'cssmin:build']);
+    ['ngtemplates:build', 'copy:buildImages', 'bower_concat:build', 
+     'copy:copyViews', 'copy:buildFrontEnd',
+     'concat:build', 'ngAnnotate:build', 'uglify:build', 
+     'cssmin:build', 'compress:build']);
 
   // runs functional tests
   grunt.registerTask('test', Help.test,

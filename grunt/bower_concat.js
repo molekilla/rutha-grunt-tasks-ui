@@ -9,9 +9,16 @@ module.exports = function(grunt,  options) {
   }
   
   return {
+    dev: {
+      dest: options.cwd + '/dist/js/deps.js',
+      cssDest: options.cwd + '/dist/css/deps.css',
+      exclude: options.bowerConcat.exclude || [],
+      mainFiles: overrideFiles
+    },
+    
     build: {
-      dest: options.cwd + '/releases/v' + options.pkg.version + '/bower_deps.js',
-      cssDest: options.cwd + '/releases/v' + options.pkg.version + '/bower_deps.css',
+      dest: options.cwd + '/releases/v' + options.pkg.version + '/ui/public/js/deps.js',
+      cssDest: options.cwd + '/releases/v' + options.pkg.version + '/ui/public/css/deps.css',
       exclude: options.bowerConcat.exclude || [],
       mainFiles: overrideFiles
     }

@@ -2,7 +2,7 @@ module.exports = {
   dev: {
     cwd: '<%= cwd %>/src',
     src: 'app/**/**.html',
-    dest: '<%= cwd %>/dist/templates.js',
+    dest: '<%= cwd %>/dist/js/templates.js',
     options: {
       module: '<%= ngTemplates.moduleNamespace %>'
     }
@@ -18,7 +18,7 @@ module.exports = {
   build: {
     cwd: '<%= cwd %>/src',
     src: 'app/**/**.html',
-    dest: '<%= cwd %>/releases/v<%= pkg.version %>/templates.js',
+    dest: '<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/templates.js',
     options: {
       module: '<%= ngTemplates.moduleNamespace %>',
       collapseBooleanAttributes: true,
