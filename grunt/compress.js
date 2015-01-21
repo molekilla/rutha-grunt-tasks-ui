@@ -1,13 +1,14 @@
 module.exports = {
   build: {
     options: {
-      archive: 'releases/v<%= pkg.version %>.zip'
+      archive: 'releases/v<%= pkg.version %>.zip',
+      mode: 'zip'
     },
     files: [
       {
-        cwd: '<%= cwd %>',
-        src: ['releases/v<%= pkg.version %>/ui/**'], 
-        dest: '.'
+        cwd: '<%= cwd %>/releases/v<%= pkg.version %>/',
+        src: ['**'], 
+        expand: true
       }
     ]
   }  
