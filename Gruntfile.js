@@ -5,10 +5,14 @@ var Help =  {
   test: 'Runs E2E/Functional tests (Angular)',
   build: 'Prepares UI assets for release',
   jshinting: 'Verifies javascript using jshint',
-  auditpkg: 'Verifies modules for any security issues'
+  auditpkg: 'Verifies modules for any security issues',
+  postinstall: 'Postinstall grunt shell script'
 };
 
 var tasks = function(grunt) {
+  
+  grunt.registerTask('postinstall', Help.postinstall, 'shell:postinstall');
+  
   // server dev environment with browsersync
   grunt.registerTask('autosync', Help.autosync,
     ['ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
@@ -25,6 +29,7 @@ var tasks = function(grunt) {
   grunt.registerTask('spec', Help.spec,
     ['jshint', 'jasmine_node', 'ngtemplates:specs', 'wiredep:test', 'karma:unit']);
 
+  // grunt build
   // builds deployment assets
   // 1) Build Angular templates
   // 2) Copy images
