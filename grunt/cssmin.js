@@ -11,10 +11,16 @@ module.exports = {
         'dist/css/app.min.css': ['src/**/*.css']
       }
     },
+    buildDependencies: {
+      cwd: '<%= cwd %>',
+      files: {
+        'releases/v<%= pkg.version %>/ui/dist/css/deps.min.css': ['<%= releaseInclude.css %>', 'dist/css/deps.css']
+    }
+    },
     build: {
       cwd: '<%= cwd %>',
       files: {
-        'releases/v<%= pkg.version %>/ui/public/css/app.min.css': ['<%= releaseInclude.css || "" %>', 'src/**/*.css']
+        'releases/v<%= pkg.version %>/ui/dist/css/app.min.css': ['<%= releaseInclude.css || "" %>', 'src/**/*.css']
       }
     }
 };

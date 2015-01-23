@@ -44,8 +44,8 @@ var tasks = function(grunt) {
   grunt.registerTask('build', Help.build,
     ['ngtemplates:build', 'copy:buildImages', 'copy:buildCssImages', 'bower_concat:build', 
      'copy:copyViews', 'copy:buildFrontEnd',
-     'concat:build', 'ngAnnotate:build', 'uglify:build', 
-     'cssmin:build', 'compress:build']);
+     'concat:build', 'ngAnnotate:build', 'uglify:build', 'uglify:buildDependencies', 
+     'cssmin:build', 'cssmin:buildDependencies', 'compress:build']);
 
   // runs functional tests
   grunt.registerTask('test', Help.test,

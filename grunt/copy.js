@@ -19,15 +19,15 @@ module.exports = {
     expand: true,
     cwd: '<%= cwd %>/src/app/img/',
     src: '**',
-    dest: 'releases/v<%= pkg.version %>/ui/public/img/',
-    flatten: true,
+    dest: 'releases/v<%= pkg.version %>/ui/dist/img/',
+    flatten: false,
     filter: 'isFile'
   },
   buildCssImages: {
     cwd: '<%= cwd %>/src/app/css',
     expand: true,
     src: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif'],
-    dest: 'releases/v<%= pkg.version %>/ui/public/css/',
+    dest: 'releases/v<%= pkg.version %>/ui/dist/css/',
     flatten: false,
     filter: 'isFile'    
   },  

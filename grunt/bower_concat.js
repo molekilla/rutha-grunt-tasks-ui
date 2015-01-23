@@ -17,8 +17,8 @@ module.exports = function(grunt,  options) {
     },
     
     build: {
-      dest: options.cwd + '/releases/v' + options.pkg.version + '/ui/public/js/deps.js',
-      cssDest: options.cwd + '/releases/v' + options.pkg.version + '/ui/public/css/deps.css',
+      dest: options.cwd + '/releases/v' + options.pkg.version + '/ui/dist/js/deps.js',
+      cssDest: options.cwd + '/releases/v' + options.pkg.version + '/ui/dist/css/deps.css',
       exclude: options.bowerConcat.exclude || [],
       mainFiles: overrideFiles
     }

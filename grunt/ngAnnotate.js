@@ -10,7 +10,7 @@ module.exports = {
   },
   build: {
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/app.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/public/js/app.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/app.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/app.js']
     }
   }
 };

@@ -24,6 +24,6 @@ module.exports = {
       'src/app/common/directives/*.js',
       'src/app/common/**/*.js',
       'src/app/**/*.js'],
-      dest: 'releases/v<%= pkg.version %>/ui/public/js/app.js'
+      dest: 'releases/v<%= pkg.version %>/ui/dist/js/app.js'
     }
   };
