@@ -4,7 +4,7 @@ module.exports = {
     },
     dev: {
       cwd: '<%= cwd %>',
-      src: ['<%= releaseInclude.js || "" %>', 'src/app/app.js',
+      src: ['<%= (releaseInclude.js && releaseInclude.js.length > 0 ) || "!fooo.js" %>', 'src/app/app.js',
       'src/app/common/global/*.js',
       'src/app/common/models/*.js',
       'src/app/common/services/*.js',
@@ -16,7 +16,7 @@ module.exports = {
     }, 
     build: {
       cwd: '<%= cwd %>',
-      src: ['<%= releaseInclude.js || "" %>', 'src/app/app.js',
+      src: ['<%= (releaseInclude.js && releaseInclude.js.length > 0 ) || "!fooo.js" %>', 'src/app/app.js',
       'src/app/common/global/*.js',
       'src/app/common/models/*.js',
       'src/app/common/services/*.js',
