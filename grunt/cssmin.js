@@ -2,7 +2,7 @@ module.exports = {
     dependencies: {
       cwd: '<%= cwd %>',
       files: {
-        'dist/css/deps.min.css': ['<%= (releaseInclude.css && releaseInclude.css.length > 0 ) || "!fooo.css" %>', 'dist/css/deps.css']
+        'dist/css/deps.min.css': ['dist/css/deps.css']
       }
     },  
     dev: {
@@ -14,13 +14,13 @@ module.exports = {
     buildDependencies: {
       cwd: '<%= cwd %>',
       files: {
-        'releases/v<%= pkg.version %>/ui/dist/css/deps.min.css': ['<%= (releaseInclude.css && releaseInclude.css.length > 0 ) || "!fooo.css" %>', 'dist/css/deps.css']
+        'releases/v<%= pkg.version %>/ui/dist/css/deps.min.css': ['dist/css/deps.css']
     }
     },
     build: {
       cwd: '<%= cwd %>',
       files: {
-        'releases/v<%= pkg.version %>/ui/dist/css/app.min.css': ['<%= (releaseInclude.css && releaseInclude.css.length > 0 ) || "!fooo.css" %>', 'src/**/*.css']
+        'releases/v<%= pkg.version %>/ui/dist/css/app.min.css': ['src/**/*.css']
       }
     }
 };
