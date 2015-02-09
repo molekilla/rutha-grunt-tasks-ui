@@ -6,10 +6,53 @@ var Help =  {
   build: 'Prepares UI assets for release',
   jshinting: 'Verifies javascript using jshint',
   auditpkg: 'Verifies modules for any security issues',
-  postinstall: 'Postinstall grunt shell script'
+  postinstall: 'Postinstall grunt shell script',
+  staging: 'Provisions a local staging VM',
+  deploy: 'Provisions a new deployment or updates existing'
 };
 
 var tasks = function(grunt) {
+  // https://github.com/gruntjs/grunt/issues/992
+    
+  grunt.registerTask('checkProvision', function() {
+      // if (grunt.option('ack') !== true) { return true; }
+      var done = this.async();
+      var readline = require('readline');
+      var rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+      });
+      rl.question('Do you want to provision staging? (Y/n)', function(answer) {
+        rl.close();
+        if (answer.toLowerCase() === 'n') {
+          done(false);
+        } else {
+          done();
+        }
+      });
+  });
+                     
+  grunt.registerTask('checkDeployment', function() {
+      // if (grunt.option('ack') !== true) { return true; }
+      var done = this.async();
+      var readline = require('readline');
+      var rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+      });
+      rl.question('Do you want to deploy? (Y/n)', function(answer) {
+        rl.close();
+        if (answer.toLowerCase() === 'n') {
+          done(false);
+        } else {
+          done();
+        }
+      });
+  });         
+  
+  grunt.registerTask('stagelocal', Help.staging, ['shell:vagrant']);
+  grunt.registerTask('staging', Help.staging, ['checkProvision', 'shell:staging']);
+  grunt.registerTask('deploy', Help.deploy, ['checkDeployment', 'shell:deploy']);
   
   grunt.registerTask('postinstall', Help.postinstall, 'shell:postinstall');
   
