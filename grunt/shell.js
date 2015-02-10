@@ -1,8 +1,8 @@
-var colors = require('colors');
+//var colors = require('colors');
 module.exports = function (grunt, options) {
   
-console.log('*** Requires rutha_deploy (https://github.com/molekilla/rutha_deploy) ***'.underline.yellow);
-  console.log('*** Requires Ansible (http://docs.ansible.com/intro_installation.html) ***'.underline.yellow);
+//console.log('*** Requires rutha_deploy (https://github.com/molekilla/rutha_deploy) ***'.underline.yellow);
+//  console.log('*** Requires Ansible (http://docs.ansible.com/intro_installation.html) ***'.underline.yellow);
         
   if (!options.deploySettings) {
     grunt.log.warn('Missing deploySettings');

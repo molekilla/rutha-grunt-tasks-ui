@@ -5,6 +5,10 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.4.1
+
+* Removing ugly warning logs
+
 #### 0.4.0
 
 * Added `grunt stagelocal`, `grunt staging` and `grunt deploy` tasks. Requires Vagrant, Ansible and rutha_deploy.
