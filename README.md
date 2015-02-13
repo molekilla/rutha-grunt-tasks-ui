@@ -5,6 +5,10 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.4.2
+
+* Missing task `preprocess:html` in watch
+
 #### 0.4.1
 
 * Removing ugly warning logs
