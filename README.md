@@ -5,6 +5,12 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.4.3
+
+* Added task `grunt-babel` for UI frontend hapi. Any *.es6 will transpile to ES5 / *.js
+* Updated  `grunt staging` and `grunt deploy` tasks with Ansible coloring
+
+
 #### 0.4.2
 
 * Missing task `preprocess:html` in watch

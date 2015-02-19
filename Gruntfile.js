@@ -64,7 +64,7 @@ var tasks = function(grunt) {
   
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
-    ['preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
+    ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
      'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages',
      'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:dev']);
     
@@ -75,6 +75,7 @@ var tasks = function(grunt) {
 
   // grunt build
   // builds deployment assets
+  // 1) Builds Babel ES6
   // 2) Preprocess Angular HTML
   // 3) Build Angular templates
   // 4) Copy images
@@ -87,8 +88,7 @@ var tasks = function(grunt) {
   // 11) Minifies CSS
   // 12) Zip
   grunt.registerTask('build', Help.build,
-    ['preprocess:html', 'ngtemplates:build', 'copy:buildImages', 'copy:buildCssImages', 'bower_concat:build', 
-     'copy:copyViews', 'copy:buildFrontEnd',
+    ['babel:build', 'preprocess:html', 'ngtemplates:build', 'copy:buildImages', 'copy:buildCssImages', 'bower_concat:build', 'copy:copyViews', 'copy:buildFrontEnd',
      'concat:build', 'ngAnnotate:build', 'uglify:build', 'uglify:buildDependencies', 
      'cssmin:build', 'cssmin:buildDependencies', 'compress:build']);
 
