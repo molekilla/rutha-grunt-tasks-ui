@@ -58,7 +58,7 @@ var tasks = function(grunt) {
   
   // server dev environment with browsersync
   grunt.registerTask('autosync', Help.autosync,
-    ['preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
+    ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
      'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 
      'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:auto']);
   

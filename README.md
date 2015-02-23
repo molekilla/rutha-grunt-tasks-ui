@@ -5,6 +5,10 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.4.4
+
+* Added task `grunt-babel` for `grunt autosync` pipeline
+
 #### 0.4.3
 
 * Added task `grunt-babel` for UI frontend hapi. Any *.es6 will transpile to ES5 / *.js
