@@ -4,8 +4,7 @@ module.exports = {
     options: {
       'web-port': '<%= nodeInspector.webPort %>',
       'debug-port': '<%= nodeInspector.debugPort %>',
-      'save-live-edit': '<%= nodeInspector.saveLiveEdit || false %>',
-      'hidden': ['node_modules']
+      'save-live-edit': '<%= nodeInspector.saveLiveEdit || false %>'
     }
   }
 };
