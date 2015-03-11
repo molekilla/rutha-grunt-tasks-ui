@@ -5,6 +5,10 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.4.6
+
+* Added nodeInspector.saveLiveEdit for grunt-node-inspector 0.1.6
+
 #### 0.4.4
 
 * Added task `grunt-babel` for `grunt autosync` pipeline
