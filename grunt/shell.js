@@ -17,13 +17,30 @@ module.exports = function (grunt, options) {
   
   var scripts = {
     vagrant: {
-      command: "PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ANSIBLE_HOST_KEY_CHECKING=false ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s' ansible-playbook --private-key=" + options.deploySettings.ruthaDeploy + "/.vagrant/machines/default/virtualbox/private_key --user=" + options.deploySettings.hosts.vagrant.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.vagrant.name + '"' + " --connection=ssh --limit='default' --inventory-file=" + options.deploySettings.ruthaDeploy + "/.vagrant/provisioners/ansible/inventory --sudo -v " + options.deploySettings.playbook
+      command: "PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ANSIBLE_HOST_KEY_CHECKING=false ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s' ansible-playbook --private-key=" + options.deploySettings.ruthaDeploy + "/.vagrant/machines/default/virtualbox/private_key --user=" + options.deploySettings.hosts.vagrant.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.vagrant.name + '"' + " --connection=ssh --limit='default' --inventory-file=" + options.deploySettings.ruthaDeploy + "/.vagrant/provisioners/ansible/inventory --sudo -v " + options.deploySettings.playbook,
+    options: {
+        execOptions: {
+            maxBuffer: Infinity
+        }        
+    }
+        
     },
     deploy: {
-      command: 'PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook ' + options.deploySettings.playbook + ' --private-key ' + options.deploySettings.hosts.production.sshKey + ' --sudo' + ' -u ' + options.deploySettings.hosts.production.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.production.name + '"'
+      command: 'PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook ' + options.deploySettings.playbook + ' --private-key ' + options.deploySettings.hosts.production.sshKey + ' --sudo' + ' -u ' + options.deploySettings.hosts.production.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.production.name + '"',
+    options: {
+        execOptions: {
+            maxBuffer: Infinity
+        }        
+    }
+        
     },
     staging: {
-      command: 'PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook ' + options.deploySettings.playbook + ' --private-key ' + options.deploySettings.hosts.staging.sshKey + ' --sudo' + ' -u ' + options.deploySettings.hosts.staging.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.staging.name + '"'
+      command: 'PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ansible-playbook ' + options.deploySettings.playbook + ' --private-key ' + options.deploySettings.hosts.staging.sshKey + ' --sudo' + ' -u ' + options.deploySettings.hosts.staging.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.staging.name + '"',
+    options: {
+        execOptions: {
+            maxBuffer: Infinity
+        }        
+    }        
     },
     postinstall: {
       command: 'node node_modules/protractor/bin/webdriver-manager update'
@@ -36,6 +53,8 @@ module.exports = function (grunt, options) {
       command: 'pwd'
     };
   }
+    
+
 
     
   return scripts;
