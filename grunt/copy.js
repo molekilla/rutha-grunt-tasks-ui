@@ -15,11 +15,27 @@ module.exports = {
     flatten: false,
     filter: 'isFile'    
   },
+  devFonts: {
+    cwd: '<%= cwd %>/src/app/fonts',
+    expand: true,
+    src: '**',
+    dest: 'dist/fonts/',
+    flatten: false,
+    filter: 'isFile'    
+  },    
   buildImages: {
     expand: true,
     cwd: '<%= cwd %>/src/app/img/',
     src: '**',
     dest: 'releases/v<%= pkg.version %>/ui/dist/img/',
+    flatten: false,
+    filter: 'isFile'
+  },    
+  buildFonts: {
+    expand: true,
+    cwd: '<%= cwd %>/src/app/fonts/',
+    src: '**',
+    dest: 'releases/v<%= pkg.version %>/ui/dist/fonts/',
     flatten: false,
     filter: 'isFile'
   },
