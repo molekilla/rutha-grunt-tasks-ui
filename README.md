@@ -5,9 +5,13 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.4.9
+
+* Added support for packaging raw (no min / uglify) assets 
+
 #### 0.4.8
 
-* Added support packaging fonts
+* Added support for packaging fonts
 
 #### 0.4.6
 

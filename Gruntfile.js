@@ -1,5 +1,4 @@
 var Help =  {
-  autosync: 'Serves frontend service with auto reload',
   serve: 'Serves frontend service with no auto reload',
   spec: 'Runs jshint and server side / Karma - Jasmine specs',
   test: 'Runs E2E/Functional tests (Angular)',
@@ -57,16 +56,16 @@ var tasks = function(grunt) {
   grunt.registerTask('postinstall', Help.postinstall, 'shell:postinstall');
   
   // server dev environment with browsersync
-  grunt.registerTask('autosync', Help.autosync,
-    ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
-     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 
-     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:auto']);
+//  grunt.registerTask('autosync', Help.autosync,
+//    ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
+//     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 
+//     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:auto']);
   
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
     ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
      'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 'copy:devFonts',
-     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:dev']);
+     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'copy:devAssets', 'concurrent:dev']);
     
   // runs server side specs and UI specs
   grunt.registerTask('spec', Help.spec,
@@ -90,7 +89,7 @@ var tasks = function(grunt) {
   grunt.registerTask('build', Help.build,
     ['babel:build', 'preprocess:html', 'ngtemplates:build', 'copy:buildImages', 'copy:buildCssImages', 'copy:buildFonts', 'bower_concat:build', 'copy:copyViews', 'copy:buildFrontEnd',
      'concat:build', 'ngAnnotate:build', 'uglify:build', 'uglify:buildDependencies', 
-     'cssmin:build', 'cssmin:buildDependencies', 'compress:build']);
+     'cssmin:build', 'cssmin:buildDependencies', 'copy:buildAssets', 'compress:build']);
 
   // runs functional tests
   grunt.registerTask('test', Help.test,

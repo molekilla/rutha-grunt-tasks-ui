@@ -8,7 +8,7 @@ module.exports = {
     dev: {
       cwd: '<%= cwd %>',
       files: {
-        'dist/css/app.min.css': ['src/**/*.css']
+        'dist/css/app.min.css': ['src/app/**/*.css']
       }
     },
     buildDependencies: {
@@ -20,7 +20,7 @@ module.exports = {
     build: {
       cwd: '<%= cwd %>',
       files: {
-        'releases/v<%= pkg.version %>/ui/dist/css/app.min.css': ['src/**/*.css']
+        'releases/v<%= pkg.version %>/ui/dist/css/app.min.css': ['src/app/**/*.css']
       }
     }
 };
