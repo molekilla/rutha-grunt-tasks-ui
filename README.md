@@ -5,6 +5,10 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 0.5.0
+
+* Added fixed concurrent limits
+
 #### 0.4.9
 
 * Added support for packaging raw (no min / uglify) assets 
