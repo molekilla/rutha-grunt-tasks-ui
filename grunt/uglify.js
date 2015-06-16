@@ -3,11 +3,11 @@ module.exports = {
     options: {
       sourceMap: true,
       sourceMapIncludeSources: true,
-      sourceMapName: '<%= cwd %>/dist/js/sourcemap.map',
+      sourceMapName: '<%= cwd %>/www/js/sourcemap.map',
       mangle: false
     },
     files: {
-      '<%= cwd %>/dist/js/app.js': ['<%= cwd %>/dist/js/app.js']
+      '<%= cwd %>/www/js/app.js': ['<%= cwd %>/www/js/app.js']
     }
   },
   buildDependencies: {
@@ -15,7 +15,7 @@ module.exports = {
       mangle: false
     },
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/deps.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/deps.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/ui/www/js/deps.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/www/js/deps.js']
     }
   },  
   build: {
@@ -23,7 +23,7 @@ module.exports = {
       mangle: false
     },
     files: {
-      '<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/app.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/app.js']
+      '<%= cwd %>/releases/v<%= pkg.version %>/ui/www/js/app.min.js': ['<%= cwd %>/releases/v<%= pkg.version %>/ui/www/js/app.js']
     }
   }
 };

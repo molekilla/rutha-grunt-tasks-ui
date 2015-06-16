@@ -1,14 +1,22 @@
 module.exports = {
   dev: {
-    cwd: '<%= cwd %>/dist/html/src',
+    cwd: '<%= cwd %>/www/html/src',
     src: 'app/**/*.html',
-    dest: '<%= cwd %>/dist/js/templates.js',
+    dest: '<%= cwd %>/www/js/templates.js',
+    options: {
+      module: '<%= ngTemplates.moduleNamespace %>'
+    }
+  },
+   ionic: {
+    cwd: '<%= cwd %>/www/html/src',
+    src: 'app/**/*.html',
+    dest: '<%= cwd %>/www/js/templates.js',
     options: {
       module: '<%= ngTemplates.moduleNamespace %>'
     }
   },
   specs: {
-    cwd: '<%= cwd %>/dist/html/src',
+    cwd: '<%= cwd %>/www/html/src',
     src: 'app/**/*.html',
     dest: '<%= cwd %>/src/test/templates.js',
     options: {
@@ -16,9 +24,9 @@ module.exports = {
     }
   },
   build: {
-    cwd: '<%= cwd %>/dist/html/src',
+    cwd: '<%= cwd %>/www/html/src',
     src: 'app/**/*.html',
-    dest: '<%= cwd %>/releases/v<%= pkg.version %>/ui/dist/js/templates.js',
+    dest: '<%= cwd %>/releases/v<%= pkg.version %>/ui/www/js/templates.js',
     options: {
       module: '<%= ngTemplates.moduleNamespace %>',
       collapseBooleanAttributes: true,

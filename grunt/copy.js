@@ -3,7 +3,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/app/css',
         expand: true,
         src: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif'],
-        dest: 'dist/css/',
+        dest: 'www/css/',
         flatten: false,
         filter: 'isFile'
     },
@@ -11,7 +11,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/app/img',
         expand: true,
         src: '**',
-        dest: 'dist/img/',
+        dest: 'www/img/',
         flatten: false,
         filter: 'isFile'
     },
@@ -19,7 +19,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/app/fonts',
         expand: true,
         src: '**',
-        dest: 'dist/fonts/',
+        dest: 'www/fonts/',
         flatten: false,
         filter: 'isFile'
     },
@@ -27,7 +27,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/assets/',
         expand: true,
         src: '**',
-        dest: 'dist/',
+        dest: 'www/',
         flatten: false,
         filter: 'isFile'
     },
@@ -35,7 +35,7 @@ module.exports = {
         expand: true,
         cwd: '<%= cwd %>/src/app/img/',
         src: '**',
-        dest: 'releases/v<%= pkg.version %>/ui/dist/img/',
+        dest: 'releases/v<%= pkg.version %>/ui/www/img/',
         flatten: false,
         filter: 'isFile'
     },
@@ -43,7 +43,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/assets/',
         expand: true,
         src: '**',
-        dest: 'releases/v<%= pkg.version %>/ui/dist/',
+        dest: 'releases/v<%= pkg.version %>/ui/www/',
         flatten: false,
         filter: 'isFile'
     },
@@ -51,7 +51,7 @@ module.exports = {
         expand: true,
         cwd: '<%= cwd %>/src/app/fonts/',
         src: '**',
-        dest: 'releases/v<%= pkg.version %>/ui/dist/fonts/',
+        dest: 'releases/v<%= pkg.version %>/ui/www/fonts/',
         flatten: false,
         filter: 'isFile'
     },
@@ -59,7 +59,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/app/css',
         expand: true,
         src: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif'],
-        dest: 'releases/v<%= pkg.version %>/ui/dist/css/',
+        dest: 'releases/v<%= pkg.version %>/ui/www/css/',
         flatten: false,
         filter: 'isFile'
     },

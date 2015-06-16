@@ -12,7 +12,7 @@ module.exports = {
       'src/app/common/directives/*.js',
       'src/app/common/**/*.js',
       'src/app/**/*.js'],
-      dest: 'dist/js/app.js'
+      dest: 'www/js/app.js'
     }, 
     build: {
       cwd: '<%= cwd %>',
@@ -24,6 +24,6 @@ module.exports = {
       'src/app/common/directives/*.js',
       'src/app/common/**/*.js',
       'src/app/**/*.js'],
-      dest: 'releases/v<%= pkg.version %>/ui/dist/js/app.js'
+      dest: 'releases/v<%= pkg.version %>/ui/www/js/app.js'
     }
   };

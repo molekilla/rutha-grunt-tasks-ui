@@ -7,7 +7,8 @@ var Help =  {
   auditpkg: 'Verifies modules for any security issues',
   postinstall: 'Postinstall grunt shell script',
   staging: 'Provisions a local staging VM',
-  deploy: 'Provisions a new deployment or updates existing'
+  deploy: 'Provisions a new deployment or updates existing',
+  ionic: 'Serves frontend service with ionic'
 };
 
 var tasks = function(grunt) {
@@ -64,6 +65,11 @@ var tasks = function(grunt) {
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
     ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
+     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 'copy:devFonts',
+     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'copy:devAssets', 'concurrent:dev']);
+
+  grunt.registerTask('ionic', Help.ionic,
+    ['babel:dev', 'preprocess:html', 'preprocess:ionic', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
      'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 'copy:devFonts',
      'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'copy:devAssets', 'concurrent:dev']);
     

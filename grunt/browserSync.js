@@ -2,7 +2,7 @@ module.exports = {
   dev: {
     bsFiles: {
       src: ['<%= cwd %>/lib/**/*.js',
-      '<%= cwd %>/dist/**/*.js',
+      '<%= cwd %>/www/**/*.js',
       '<%= cwd %>/src/**/*.js',
       '<%= cwd %>/views/**/*.html']
     },

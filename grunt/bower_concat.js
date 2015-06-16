@@ -10,15 +10,15 @@ module.exports = function(grunt,  options) {
   
   return {
     dev: {
-      dest: options.cwd + '/dist/js/deps.js',
-      cssDest: options.cwd + '/dist/css/deps.css',
+      dest: options.cwd + '/www/js/deps.js',
+      cssDest: options.cwd + '/www/css/deps.css',
       exclude: options.bowerConcat.exclude || [],
       mainFiles: overrideFiles
     },
     
     build: {
-      dest: options.cwd + '/releases/v' + options.pkg.version + '/ui/dist/js/deps.js',
-      cssDest: options.cwd + '/releases/v' + options.pkg.version + '/ui/dist/css/deps.css',
+      dest: options.cwd + '/releases/v' + options.pkg.version + '/ui/www/js/deps.js',
+      cssDest: options.cwd + '/releases/v' + options.pkg.version + '/ui/www/css/deps.css',
       exclude: options.bowerConcat.exclude || [],
       mainFiles: overrideFiles
     }
