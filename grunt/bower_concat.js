@@ -9,9 +9,10 @@ module.exports = function(grunt,  options) {
   }
   
   return {
+  
     dev: {
-      dest: options.cwd + '/dist/js/deps.js',
-      cssDest: options.cwd + '/dist/css/deps.css',
+      dest: options.cwd + '/<%= devEnvironment.distFolder || "dist" %>/js/deps.js',
+      cssDest: options.cwd + '/<%= devEnvironment.distFolder || "dist" %>/css/deps.css',
       exclude: options.bowerConcat.exclude || [],
       mainFiles: overrideFiles
     },

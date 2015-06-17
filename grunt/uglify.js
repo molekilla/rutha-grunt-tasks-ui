@@ -10,6 +10,17 @@ module.exports = {
       '<%= cwd %>/dist/js/app.js': ['<%= cwd %>/dist/js/app.js']
     }
   },
+  devIonic: {
+    options: {
+      sourceMap: true,
+      sourceMapIncludeSources: true,
+      sourceMapName: '<%= cwd %>/www/js/sourcemap.map',
+      mangle: false
+    },
+    files: {
+      '<%= cwd %>/www/js/app.js': ['<%= cwd %>/www/js/app.js']
+    }
+  },    
   buildDependencies: {
     options: {
       mangle: false

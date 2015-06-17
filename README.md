@@ -5,6 +5,12 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+
+#### 1.0.0
+
+* Added support for devEnvironment.distFolder variable
+* Added support for Ionic 1.0.0 (grunt ionic)
+
 #### 0.5.0
 
 * Added fixed concurrent limits
