@@ -2,13 +2,13 @@ module.exports = {
     dependencies: {
       cwd: '<%= cwd %>',
       files: {
-        'dist/css/deps.min.css': ['dist/css/deps.css']
+        '<%= devEnvironment.distFolder || "dist" %>/css/deps.min.css': ['<%= devEnvironment.distFolder || "dist" %>/css/deps.css']
       }
     },  
     dev: {
       cwd: '<%= cwd %>',
       files: {
-        'dist/css/app.min.css': ['src/app/**/*.css']
+        '<%= devEnvironment.distFolder || "dist" %>/css/app.min.css': ['src/app/**/*.css']
       }
     },
     buildDependencies: {

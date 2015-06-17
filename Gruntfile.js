@@ -1,5 +1,6 @@
 var Help =  {
   serve: 'Serves frontend service with no auto reload',
+  'serve:ionic': 'Serves frontend service with no auto reload for ionic',
   spec: 'Runs jshint and server side / Karma - Jasmine specs',
   test: 'Runs E2E/Functional tests (Angular)',
   build: 'Prepares UI assets for release',
@@ -55,11 +56,11 @@ var tasks = function(grunt) {
   
   grunt.registerTask('postinstall', Help.postinstall, 'shell:postinstall');
   
-  // server dev environment with browsersync
-//  grunt.registerTask('autosync', Help.autosync,
-//    ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
-//     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 
-//     'copy:devImages', 'cssmin:dependencies', 'cssmin:dev', 'concurrent:auto']);
+  // server dev environment no auto refresh for ionic
+  grunt.registerTask('ionic', Help.serve,
+    ['babel:dev', 'preprocess:ionic', 'ngtemplates:ionic', 'concat:ionic', 'ngAnnotate:dev', 'uglify:devIonic', 
+     'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 'copy:devFonts',
+     'copy:devImages', 'copy:ionicIndex', 'cssmin:dependencies', 'cssmin:dev', 'copy:devAssets', 'concurrent:dev']);
   
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,

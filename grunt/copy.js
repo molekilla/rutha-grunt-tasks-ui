@@ -1,9 +1,17 @@
 module.exports = {
+    ionicIndex: {
+        cwd: '<%= cwd %>/src/app',
+        expand: true,
+        src: ['index.html'],
+        dest: '<%= devEnvironment.distFolder || "www" %>/',
+        flatten: false,
+        filter: 'isFile'
+    },    
     devCssImages: {
         cwd: '<%= cwd %>/src/app/css',
         expand: true,
         src: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.gif'],
-        dest: 'dist/css/',
+        dest: '<%= devEnvironment.distFolder || "dist" %>/css/',
         flatten: false,
         filter: 'isFile'
     },
@@ -11,7 +19,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/app/img',
         expand: true,
         src: '**',
-        dest: 'dist/img/',
+        dest: '<%= devEnvironment.distFolder || "dist" %>/img/',
         flatten: false,
         filter: 'isFile'
     },
@@ -19,7 +27,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/app/fonts',
         expand: true,
         src: '**',
-        dest: 'dist/fonts/',
+        dest: '<%= devEnvironment.distFolder || "dist" %>/fonts/',
         flatten: false,
         filter: 'isFile'
     },
@@ -27,7 +35,7 @@ module.exports = {
         cwd: '<%= cwd %>/src/assets/',
         expand: true,
         src: '**',
-        dest: 'dist/',
+        dest: '<%= devEnvironment.distFolder || "dist" %>/',
         flatten: false,
         filter: 'isFile'
     },

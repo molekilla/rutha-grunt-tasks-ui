@@ -5,7 +5,7 @@ module.exports = {
   },
   dev: {
     files: {
-      '<%= cwd %>/dist/js/app.js': ['<%= cwd %>/dist/js/app.js']
+      '<%= cwd %>/<%= devEnvironment.distFolder || "dist" %>/js/app.js': ['<%= cwd %>/<%= devEnvironment.distFolder || "dist" %>/js/app.js']
     }
   },
   build: {
