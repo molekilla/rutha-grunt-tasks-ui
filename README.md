@@ -5,6 +5,9 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 1.0.2
+
+* Fixes for Ionic (ngtemplates)
 
 #### 1.0.1
 

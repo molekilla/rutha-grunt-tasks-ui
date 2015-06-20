@@ -1,6 +1,6 @@
 module.exports = {
   dev: {
-    cwd: '<%= cwd %>/dist/html/src',
+    cwd: '<%= cwd %>/<%= devEnvironment.distFolder || "dist" %>/html/src',
     src: 'app/**/*.html',
     dest: '<%= cwd %>/<%= devEnvironment.distFolder || "dist" %>/js/templates.js',
     options: {
