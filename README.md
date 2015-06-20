@@ -6,6 +6,10 @@ Grunt tasks used by rutha UI
 ### Changelog
 
 
+#### 1.0.1
+
+* Fixes for Ionic
+
 #### 1.0.0
 
 * Added support for devEnvironment.distFolder variable

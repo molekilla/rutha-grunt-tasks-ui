@@ -58,7 +58,7 @@ var tasks = function(grunt) {
   
   // server dev environment no auto refresh for ionic
   grunt.registerTask('ionic', Help.serve,
-    ['babel:dev', 'preprocess:ionic', 'ngtemplates:ionic', 'concat:ionic', 'ngAnnotate:dev', 'uglify:devIonic', 
+    ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:devIonic', 
      'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 'copy:devFonts',
      'copy:devImages', 'copy:ionicIndex', 'cssmin:dependencies', 'cssmin:dev', 'copy:devAssets', 'concurrent:dev']);
   

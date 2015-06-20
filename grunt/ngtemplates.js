@@ -2,7 +2,7 @@ module.exports = {
   dev: {
     cwd: '<%= cwd %>/dist/html/src',
     src: 'app/**/*.html',
-    dest: '<%= cwd %>/dist/js/templates.js',
+    dest: '<%= cwd %>/<%= devEnvironment.distFolder || "dist" %>/js/templates.js',
     options: {
       module: '<%= ngTemplates.moduleNamespace %>'
     }
