@@ -5,6 +5,10 @@ Grunt tasks used by rutha UI
 
 ### Changelog
 
+#### 1.1.0
+
+* (breaking change) New `grunt ionic` supports SASS styles only
+
 #### 1.0.2
 
 * Fixes for Ionic (ngtemplates)

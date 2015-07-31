@@ -60,8 +60,8 @@ var tasks = function(grunt) {
   grunt.registerTask('ionic', Help.serve,
     ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:devIonic', 
      'bower_concat:dev', 'wiredep:dev', 'copy:devCssImages', 'copy:devFonts',
-     'copy:devImages', 'copy:ionicIndex', 'cssmin:dependencies', 'cssmin:dev', 'copy:devAssets', 'concurrent:dev']);
-  
+     'copy:devImages', 'copy:ionicIndex', 'cssmin:dependencies', 'sass:ionic', 'copy:devAssets', 'concurrent:dev']);
+
   // server dev environment no auto refresh
   grunt.registerTask('serve', Help.serve,
     ['babel:dev', 'preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev', 
