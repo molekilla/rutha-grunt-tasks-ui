@@ -64,7 +64,7 @@ var tasks = function (grunt, options) {
 
         // Default task.
         // runs server side specs and UI specs
-        grunt.registerTask('spec', Help.spec, ['preprocess:html', 'jshint', 'jasmine_node',
+        grunt.registerTask('spec', Help.spec, ['preprocess:html', 'jshint', 'shell:jasmine',
      'ngtemplates:specs', 'wiredep:test', 'karma:unit']);
         // server dev environment no auto refresh
         grunt.registerTask('serve', Help.serve, ['preprocess:html', 'ngtemplates:dev', 'concat:dev', 'ngAnnotate:dev', 'uglify:dev',

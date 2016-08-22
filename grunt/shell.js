@@ -13,9 +13,11 @@ module.exports = function (grunt, options) {
     grunt.log.warn('Missing deploySettings.hosts');
     return;
   }
-
   
   var scripts = {
+    jasmine: {
+      command: "node ./node_modules/jasmine/bin/jasmine.js"
+    },    
     vagrant: {
       command: "PYTHONUNBUFFERED=1 ANSIBLE_FORCE_COLOR=true ANSIBLE_HOST_KEY_CHECKING=false ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ForwardAgent=yes -o ControlMaster=auto -o ControlPersist=60s' ansible-playbook --private-key=" + options.deploySettings.ruthaDeploy + "/.vagrant/machines/default/virtualbox/private_key --user=" + options.deploySettings.hosts.vagrant.remoteUser + ' --extra-vars "target_host=' + options.deploySettings.hosts.vagrant.name + '"' + " --connection=ssh --limit='default' --inventory-file=" + options.deploySettings.ruthaDeploy + "/.vagrant/provisioners/ansible/inventory --sudo -v " + options.deploySettings.playbook,
     options: {
